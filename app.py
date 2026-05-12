@@ -55,8 +55,8 @@ if uploaded_file is not None:
                 # Atualiza a barra de progresso
                 progress_bar.progress((page_num + 1) / total_paginas)
 
-            # Salva o resultado
-            pdf_bytes = pdf_novo.write()
+            # Salva o resultado (LINHA CORRIGIDA AQUI)
+            pdf_bytes = pdf_novo.tobytes()
             pdf_document.close()
             pdf_novo.close()
 
@@ -71,9 +71,3 @@ if uploaded_file is not None:
             file_name="Processo_Otimizado.pdf",
             mime="application/pdf"
         )
-
-
-
-
-
-
